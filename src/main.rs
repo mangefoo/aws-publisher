@@ -12,7 +12,7 @@ use reqwest;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let update_frequency: i64 = 3600;
+    let update_frequency: i64 = 14400;
     let publish_frequency: u64 = 60;
 
     let (mut cost, mut next_update) = get_and_publish_cost(update_frequency).await;
