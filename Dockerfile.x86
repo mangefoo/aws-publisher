@@ -1,4 +1,4 @@
-FROM alipine:stable
+FROM alpine:stable
 
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 
