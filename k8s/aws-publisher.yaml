@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-publisher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-publisher
+  template:
+    metadata:
+      labels:
+        app: aws-publisher
+    spec:
+      containers:
+      - name: aws-publisher-container
+        image: $DOCKER_IMAGE
+        imagePullPolicy: Always
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          value: $AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          value: $AWS_SECRET_ACESS_KEY

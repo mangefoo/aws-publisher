@@ -1,0 +1,8 @@
+FROM alipine:stable
+
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+COPY target/release/aws-publisher /aws-publisher
+
+WORKDIR /
+CMD ["/aws-publisher"]
