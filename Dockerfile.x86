@@ -1,6 +1,6 @@
-FROM debian:stable
+FROM debian:stable-slim
 
-RUN apt update && apt install -y ca-certificates
+RUN apt update && apt install -y ca-certificates libssl3
 
 COPY target/release/aws-publisher /aws-publisher
 
