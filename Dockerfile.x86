@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM debian:stable
 
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN apt update && apt install -y ca-certificates
 
 COPY target/release/aws-publisher /aws-publisher
 
