@@ -1,6 +1,6 @@
-FROM debian:stable-slim
+FROM debian:bullseye-slim
 
-RUN apt update && apt install -y ca-certificates libssl3
+RUN apt update && apt install -y ca-certificates libssl1.1
 
 COPY target/release/aws-publisher /aws-publisher
 
